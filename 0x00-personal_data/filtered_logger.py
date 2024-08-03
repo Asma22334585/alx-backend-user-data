@@ -31,7 +31,8 @@ class RedactingFormatter(logging.Formatter):
 
     def format(self, record: logging.LogRecord) -> str:
         """ format method"""
-        return filter_datum(self.fields, self.REDACTION, super().format(record), self.SEPARATOR)
+        return filter_datum(self.fields, self.REDACTION, super().format(record),
+                self.SEPARATOR)
 
 
 PII_FIELDS = ("name", "email", "phone", "ssn", "password")
